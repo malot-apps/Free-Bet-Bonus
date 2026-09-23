@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BetBonus — Premium Rewards Demo</title>
-  <meta name="description" content="Explore a premium rewards interface through an educational simulation. No real money, deposits or withdrawals.">
+  <title>BetBonus — প্রিমিয়াম রিওয়ার্ড ডেমো</title>
+  <meta name="description" content="একটি এডুকেশনাল সিমুলেশনের মাধ্যমে প্রিমিয়াম রিওয়ার্ড ইন্টারফেস এক্সপ্লোর করুন। ডিপোজিট বা রিয়েল মানির প্রয়োজন নেই।">
   <meta name="theme-color" content="#050806">
   
   <!-- Open Graph Metadata -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="BetBonus — Premium Rewards Demo">
-  <meta property="og:description" content="Explore a premium rewards interface through an educational simulation. No real money, deposits or withdrawals.">
+  <meta property="og:title" content="BetBonus — প্রিমিয়াম রিওয়ার্ড ডেমো">
+  <meta property="og:description" content="একটি এডুকেশনাল সিমুলেশনের মাধ্যমে প্রিমিয়াম রিওয়ার্ড ইন্টারফেস এক্সপ্লোর করুন। ডিপোজিট বা রিয়েল মানির প্রয়োজন নেই।">
   <meta property="og:image" content="favicon.svg">
   <link rel="canonical" href="https://example.com/betbonus-demo">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -18,7 +18,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================
@@ -41,8 +41,8 @@
       --radius-md: 14px;
       --radius-lg: 20px;
       --radius-pill: 9999px;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'Hind Siliguri', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -101,6 +101,76 @@
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.15;
+    }
+
+    /* ----------------------------------------------------------
+       Specific Bengali Font Optimization ('Hind Siliguri')
+       Ensures proportional line-height, comfortable ascender/descender
+       clearance (matra and kar signs), optical vertical alignment,
+       and harmonious letter-spacing matching Latin display typography.
+       ---------------------------------------------------------- */
+    :lang(bn),
+    [lang="bn"],
+    .font-bengali {
+      font-feature-settings: "kern" 1, "liga" 1;
+      text-rendering: optimizeLegibility;
+      letter-spacing: 0.01em; /* Natural letter tracking for Bengali conjuncts */
+    }
+
+    :lang(bn) h1,
+    :lang(bn) h2,
+    :lang(bn) h3,
+    :lang(bn) h4,
+    :lang(bn) .font-display {
+      line-height: 1.32; /* Generous clearance for upper/lower vowel diacritics */
+      letter-spacing: -0.005em; /* Avoid overlapping complex glyph conjuncts */
+    }
+
+    :lang(bn) .hero-content h1 {
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    :lang(bn) .section-title {
+      line-height: 1.3;
+    }
+
+    :lang(bn) .section-subtitle,
+    :lang(bn) .hero-lead,
+    :lang(bn) p {
+      line-height: 1.75;
+      letter-spacing: 0.012em;
+    }
+
+    :lang(bn) .badge-demo,
+    :lang(bn) .badge-fictional,
+    :lang(bn) .dash-label,
+    :lang(bn) .section-eyebrow,
+    :lang(bn) .card-title-sm {
+      letter-spacing: 0.035em; /* Clean, un-crowded small caps/badge spacing */
+      line-height: 1.4;
+    }
+
+    :lang(bn) .btn {
+      letter-spacing: 0.01em;
+      line-height: 1.35;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+
+    :lang(bn) .nav-link {
+      letter-spacing: 0.01em;
+      line-height: 1.4;
+    }
+
+    :lang(bn) .faq-trigger {
+      line-height: 1.45;
+      letter-spacing: 0.005em;
+    }
+
+    :lang(bn) .faq-content {
+      line-height: 1.75;
+      letter-spacing: 0.01em;
     }
 
     .text-accent {
@@ -373,6 +443,26 @@
       gap: 1rem;
     }
 
+    /* Subtle pulsing glow for Header 'Try Demo' button on hover */
+    #navTryDemoBtn {
+      position: relative;
+      transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    #navTryDemoBtn:hover {
+      background: var(--accent-secondary);
+      animation: headerBtnPulseGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes headerBtnPulseGlow {
+      0%, 100% {
+        box-shadow: 0 4px 18px rgba(185, 243, 75, 0.35), 0 0 0 0 rgba(185, 243, 75, 0.45);
+      }
+      50% {
+        box-shadow: 0 8px 30px rgba(185, 243, 75, 0.6), 0 0 16px 4px rgba(185, 243, 75, 0.35);
+      }
+    }
+
     .mobile-menu-btn {
       display: none;
       color: var(--text-main);
@@ -506,13 +596,23 @@
       overflow: hidden;
       transform-style: preserve-3d;
       will-change: transform;
-      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+      transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: default;
+      animation: cardGentleFloat 6s ease-in-out infinite;
     }
 
     .glass-reward-card:hover {
-      border-color: rgba(185, 243, 75, 0.45);
-      box-shadow: 0 28px 56px rgba(0, 0, 0, 0.7), 0 0 50px rgba(185, 243, 75, 0.16);
+      border-color: var(--accent-secondary);
+      box-shadow: 0 28px 56px rgba(0, 0, 0, 0.7), 0 0 50px rgba(185, 243, 75, 0.22);
+    }
+
+    @keyframes cardGentleFloat {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
     }
 
     /* Subtle parallax depth on inner elements */
@@ -1011,6 +1111,73 @@
     /* ==========================================================
        10. LEADERBOARD SECTION
        ========================================================== */
+    .leaderboard-controls-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .leaderboard-toggle-group {
+      display: inline-flex;
+      align-items: center;
+      background: #090E0B;
+      padding: 0.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .leaderboard-toggle-btn {
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .leaderboard-toggle-btn:hover {
+      color: var(--text-main);
+    }
+
+    .leaderboard-toggle-btn.active {
+      background: var(--accent-primary);
+      color: #050806;
+      box-shadow: 0 2px 10px rgba(185, 243, 75, 0.3);
+    }
+
+    .leaderboard-auto-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(20, 31, 24, 0.5);
+      border: 1px solid rgba(35, 49, 41, 0.6);
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .leaderboard-pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      box-shadow: 0 0 6px var(--accent-primary);
+      animation: pulseGlow 1.8s infinite;
+    }
+
     .leaderboard-table {
       width: 100%;
       border-collapse: separate;
@@ -1021,7 +1188,22 @@
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      transition: transform var(--transition-fast), border-color var(--transition-fast), opacity 0.3s ease;
+    }
+
+    .leaderboard-row.score-updated {
+      animation: rowFlashHighlight 1s ease-out;
+    }
+
+    @keyframes rowFlashHighlight {
+      0% {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 16px rgba(185, 243, 75, 0.25);
+      }
+      100% {
+        border-color: var(--border-subtle);
+        box-shadow: none;
+      }
     }
 
     .leaderboard-row:hover {
@@ -1550,6 +1732,28 @@
       padding: 1.8rem;
       text-align: center;
       box-shadow: 0 0 30px rgba(185, 243, 75, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .simulated-result-display.has-revealed {
+      animation: resultBoxGlowBurst 1.2s ease-out forwards;
+    }
+
+    @keyframes resultBoxGlowBurst {
+      0% {
+        box-shadow: 0 0 10px rgba(185, 243, 75, 0.15), inset 0 0 0 rgba(185, 243, 75, 0);
+        border-color: rgba(185, 243, 75, 0.4);
+      }
+      40% {
+        box-shadow: 0 0 45px rgba(185, 243, 75, 0.5), inset 0 0 20px rgba(185, 243, 75, 0.2);
+        border-color: #D7FF78;
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(185, 243, 75, 0.25), inset 0 0 10px rgba(185, 243, 75, 0.08);
+        border-color: var(--accent-primary);
+      }
     }
 
     .simulated-result-number {
@@ -1558,6 +1762,35 @@
       font-weight: 800;
       color: var(--accent-primary);
       letter-spacing: -0.02em;
+      transform-origin: center center;
+      display: inline-block;
+      will-change: transform, opacity;
+    }
+
+    .simulated-result-number.animate-scale-up {
+      animation: resultNumberScaleUp 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes resultNumberScaleUp {
+      0% {
+        opacity: 0;
+        transform: scale(0.4) translateY(20px);
+        filter: blur(8px);
+      }
+      65% {
+        opacity: 1;
+        transform: scale(1.12) translateY(-2px);
+        filter: blur(0px);
+        text-shadow: 0 0 24px rgba(185, 243, 75, 0.8);
+      }
+      85% {
+        transform: scale(0.97) translateY(1px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        text-shadow: 0 0 16px rgba(185, 243, 75, 0.45);
+      }
     }
 
     /* ==========================================================
@@ -1668,6 +1901,11 @@
       .card-glare {
         display: none !important;
       }
+      .simulated-result-number,
+      .simulated-result-display {
+        animation: none !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
@@ -1682,7 +1920,7 @@
       <line x1="12" y1="8" x2="12" y2="12"></line>
       <line x1="12" y1="16" x2="12.01" y2="16"></line>
     </svg>
-    <span>DEMO MODE · EDUCATIONAL SIMULATION · NO REAL MONEY</span>
+    <span>ডেমো মোড · এটি একটি এডুকেশনাল সিমুলেশন · কোনো আসল টাকা প্রয়োজন নেই</span>
   </aside>
 
   <!-- ==========================================================
@@ -1694,19 +1932,19 @@
         <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
         <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
       </svg>
-      <span>ACTIVITY</span>
+      <span>অ্যাক্টিভিটি</span>
     </div>
     <div class="ticker-move-container">
       <div class="ticker-move" id="tickerMove">
-        <div class="ticker-item"><span>⚡</span> <strong>Demo Event:</strong> Demo reward interface was just explored</div>
-        <div class="ticker-item"><span>🎰</span> <strong>Demo Event:</strong> Bonus wheel simulation completed</div>
-        <div class="ticker-item"><span>🚀</span> <strong>Demo Event:</strong> New educational demo session opened</div>
-        <div class="ticker-item"><span>📊</span> <strong>Demo Event:</strong> Premium dashboard preview viewed</div>
+        <div class="ticker-item"><span>⚡</span> <strong>ডেমো আপডেট:</strong> এইমাত্র ডেমো রিওয়ার্ড ফিচার এক্সপ্লোর করা হলো</div>
+        <div class="ticker-item"><span>🎰</span> <strong>ডেমো আপডেট:</strong> বোনাস হুইল স্পিন সিমুলেশন সম্পন্ন হয়েছে</div>
+        <div class="ticker-item"><span>🚀</span> <strong>ডেমো আপডেট:</strong> নতুন ডেমো সেশন শুরু হয়েছে</div>
+        <div class="ticker-item"><span>📊</span> <strong>ডেমো আপডেট:</strong> প্রিমিয়াম ড্যাশবোর্ড ইন্টারফেস প্রিভিউ দেখা হয়েছে</div>
         <!-- Duplicate for continuous loop -->
-        <div class="ticker-item"><span>⚡</span> <strong>Demo Event:</strong> Demo reward interface was just explored</div>
-        <div class="ticker-item"><span>🎰</span> <strong>Demo Event:</strong> Bonus wheel simulation completed</div>
-        <div class="ticker-item"><span>🚀</span> <strong>Demo Event:</strong> New educational demo session opened</div>
-        <div class="ticker-item"><span>📊</span> <strong>Demo Event:</strong> Premium dashboard preview viewed</div>
+        <div class="ticker-item"><span>⚡</span> <strong>ডেমো আপডেট:</strong> এইমাত্র ডেমো রিওয়ার্ড ফিচার এক্সপ্লোর করা হলো</div>
+        <div class="ticker-item"><span>🎰</span> <strong>ডেমো আপডেট:</strong> বোনাস হুইল স্পিন সিমুলেশন সম্পন্ন হয়েছে</div>
+        <div class="ticker-item"><span>🚀</span> <strong>ডেমো আপডেট:</strong> নতুন ডেমো সেশন শুরু হয়েছে</div>
+        <div class="ticker-item"><span>📊</span> <strong>ডেমো আপডেট:</strong> প্রিমিয়াম ড্যাশবোর্ড ইন্টারফেস প্রিভিউ দেখা হয়েছে</div>
       </div>
     </div>
   </div>
@@ -1724,22 +1962,22 @@
         </svg>
         <div>
           <span class="brand-title">BETBONUS <span class="badge-demo">DEMO</span></span>
-          <span class="brand-tagline-sub">Premium Rewards Experience</span>
+          <span class="brand-tagline-sub">প্রিমিয়াম রিওয়ার্ড এক্সপেরিয়েন্স</span>
         </div>
       </a>
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
-          <li><a href="#wheel" class="nav-link">Bonus Wheel</a></li>
-          <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
-          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#dashboard" class="nav-link">ড্যাশবোর্ড</a></li>
+          <li><a href="#wheel" class="nav-link">বোনাস হুইল</a></li>
+          <li><a href="#leaderboard" class="nav-link">লিডারবোর্ড</a></li>
+          <li><a href="#how-it-works" class="nav-link">কীভাবে কাজ করে</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button type="button" class="btn btn-primary btn-sm" id="navTryDemoBtn" onclick="openClaimModal()">Try Demo</button>
+        <button type="button" class="btn btn-primary btn-sm" id="navTryDemoBtn" onclick="openClaimModal()">ডেমো দেখুন</button>
         <button type="button" class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -1754,13 +1992,13 @@
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav-drawer" id="mobileDrawer">
     <ul class="mobile-nav-links">
-      <li><a href="#dashboard" class="mobile-nav-link" onclick="toggleMobileMenu()">Dashboard</a></li>
-      <li><a href="#wheel" class="mobile-nav-link" onclick="toggleMobileMenu()">Bonus Wheel</a></li>
-      <li><a href="#leaderboard" class="mobile-nav-link" onclick="toggleMobileMenu()">Leaderboard</a></li>
-      <li><a href="#how-it-works" class="mobile-nav-link" onclick="toggleMobileMenu()">How It Works</a></li>
+      <li><a href="#dashboard" class="mobile-nav-link" onclick="toggleMobileMenu()">ড্যাশবোর্ড</a></li>
+      <li><a href="#wheel" class="mobile-nav-link" onclick="toggleMobileMenu()">বোনাস হুইল</a></li>
+      <li><a href="#leaderboard" class="mobile-nav-link" onclick="toggleMobileMenu()">লিডারবোর্ড</a></li>
+      <li><a href="#how-it-works" class="mobile-nav-link" onclick="toggleMobileMenu()">কীভাবে কাজ করে</a></li>
       <li><a href="#faq" class="mobile-nav-link" onclick="toggleMobileMenu()">FAQ</a></li>
     </ul>
-    <button type="button" class="btn btn-primary" style="width: 100%;" onclick="toggleMobileMenu(); openClaimModal();">Try Demo Bonus</button>
+    <button type="button" class="btn btn-primary" style="width: 100%;" onclick="toggleMobileMenu(); openClaimModal();">ডেমো বোনাস দেখুন</button>
   </div>
 
   <main>
@@ -1771,31 +2009,31 @@
       <div class="hero-glow"></div>
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="badge-demo" style="margin-bottom: 1.2rem;">Educational UI Simulation</span>
+          <span class="badge-demo" style="margin-bottom: 1.2rem;">এডুকেশনাল UI সিমুলেশন</span>
           <h1>
-            WELCOME BONUS<br>
-            <span class="text-accent">SIMULATION</span>
+            ওয়েলকাম বোনাস<br>
+            <span class="text-accent">সিমুলেশন</span>
           </h1>
           <p class="hero-lead">
-            Explore a premium rewards interface with animated bonus states, dashboard analytics and interactive demo features — without deposits or real-money betting.
+            অ্যানিমেটেড বোনাস, ড্যাশবোর্ড অ্যানালিটিক্স এবং আধুনিক রিওয়ার্ড ইন্টারফেস এক্সপ্লোর করুন — কোনো ডিপোজিট বা আসল টাকা ছাড়াই।
           </p>
           <div class="hero-cta-group">
             <button type="button" class="btn btn-primary" id="heroClaimBtn" onclick="openClaimModal()">
-              <span>Claim Demo Bonus</span>
+              <span>ডেমো বোনাস দেখুন</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </button>
             <a href="#features" class="btn btn-secondary" id="heroExploreBtn">
-              Explore Experience
+              এক্সপেরিয়েন্স দেখুন
             </a>
           </div>
           <div class="trust-indicators">
-            <div class="trust-item"><span class="trust-check">✓</span> No deposit</div>
-            <div class="trust-item"><span class="trust-check">✓</span> No withdrawal</div>
-            <div class="trust-item"><span class="trust-check">✓</span> Fictional rewards</div>
-            <div class="trust-item"><span class="trust-check">✓</span> Educational demo</div>
+            <div class="trust-item"><span class="trust-check">✓</span> কোনো ডিপোজিট নেই</div>
+            <div class="trust-item"><span class="trust-check">✓</span> উইথড্র করার সুযোগ নেই</div>
+            <div class="trust-item"><span class="trust-check">✓</span> কাল্পনিক রিওয়ার্ড</div>
+            <div class="trust-item"><span class="trust-check">✓</span> এডুকেশনাল ডেমো</div>
           </div>
         </div>
 
@@ -1807,18 +2045,18 @@
 
             <div class="card-top-row">
               <div>
-                <span class="card-title-sm">WELCOME BONUS</span>
-                <div style="font-size: 0.72rem; color: var(--text-muted);">FICTIONAL REWARD TIER</div>
+                <span class="card-title-sm">ওয়েলকাম বোনাস</span>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">কাল্পনিক রিওয়ার্ড স্তর</div>
               </div>
               <span class="badge-demo">DEMO</span>
             </div>
 
-            <div class="reward-hero-amount" id="heroRewardAmount">৳500 — ৳1,000</div>
+            <div class="reward-hero-amount" id="heroRewardAmount">৳৫০০ — ৳১,০০০</div>
 
             <div class="progress-module">
               <div class="progress-meta">
-                <span style="color: var(--text-muted); font-size: 0.8rem;">Simulation Progress</span>
-                <span style="color: var(--accent-primary); font-weight: 700;" id="heroProgressPercent">68%</span>
+                <span style="color: var(--text-muted); font-size: 0.8rem;">সিমুলেশন প্রগ্রেস</span>
+                <span style="color: var(--accent-primary); font-weight: 700;" id="heroProgressPercent">৬৮%</span>
               </div>
               <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="heroProgressBar" style="width: 68%;"></div>
@@ -1827,8 +2065,8 @@
 
             <div class="sessions-card-meta">
               <div>
-                <div class="sessions-label">Demo Sessions</div>
-                <div style="font-size: 0.7rem; color: #57655c;">Fictional count for UI preview</div>
+                <div class="sessions-label">ডেমো সেশন</div>
+                <div style="font-size: 0.7rem; color: #57655c;">UI প্রিভিউয়ের জন্য কাল্পনিক সংখ্যা</div>
               </div>
               <div class="sessions-counter-num" id="heroSessionCounter">2,847+</div>
             </div>
@@ -1843,16 +2081,16 @@
     <section class="section-spacing" id="dashboard">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Interface Preview</span>
-          <h2 class="section-title">Your Demo Dashboard</h2>
-          <p class="section-subtitle">All information shown here is simulated.</p>
+          <span class="section-eyebrow">ইন্টারফেস প্রিভিউ</span>
+          <h2 class="section-title">আপনার ডেমো ড্যাশবোর্ড</h2>
+          <p class="section-subtitle">এখানে প্রদর্শিত সকল তথ্য কাল্পনিক ও ডেমো প্রিভিউয়ের অংশ।</p>
         </div>
 
         <div class="dashboard-grid">
           <!-- Card 1: Demo Sessions -->
           <div class="dash-card">
             <div class="dash-card-header">
-              <span class="dash-label">DEMO SESSIONS</span>
+              <span class="dash-label">মোট ডেমো সেশন</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                 <circle cx="9" cy="7" r="4"></circle>
@@ -1863,7 +2101,7 @@
             <div>
               <div class="dash-card-value" id="dashSessionCount">2,847+</div>
               <div class="dash-card-foot">
-                <span class="badge-fictional">Simulated Counter</span>
+                <span class="badge-fictional">কাল্পনিক কাউন্টার</span>
               </div>
             </div>
           </div>
@@ -1871,7 +2109,7 @@
           <!-- Card 2: Simulated Bonus -->
           <div class="dash-card">
             <div class="dash-card-header">
-              <span class="dash-label">SIMULATED BONUS</span>
+              <span class="dash-label">কাল্পনিক বোনাস</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
@@ -1879,7 +2117,7 @@
             <div>
               <div class="dash-card-value text-accent" id="dashBonusAmount">৳7,428</div>
               <div class="dash-card-foot">
-                <span class="badge-fictional">No cash value</span>
+                <span class="badge-fictional">কোনো ক্যাশ ভ্যালু নেই</span>
               </div>
             </div>
           </div>
@@ -1887,16 +2125,16 @@
           <!-- Card 3: Completion -->
           <div class="dash-card">
             <div class="dash-card-header">
-              <span class="dash-label">COMPLETION</span>
+              <span class="dash-label">প্রগ্রেস</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
             </div>
             <div>
-              <div class="dash-card-value" id="dashCompletion">82%</div>
+              <div class="dash-card-value" id="dashCompletion">৮২%</div>
               <div class="dash-card-foot">
-                <span class="badge-fictional">Demo module progress</span>
+                <span class="badge-fictional">ডেমো মডিউল প্রগ্রেস</span>
               </div>
             </div>
           </div>
@@ -1904,27 +2142,27 @@
           <!-- Card 4: Demo Activity -->
           <div class="dash-card">
             <div class="dash-card-header">
-              <span class="dash-label">DEMO ACTIVITY</span>
+              <span class="dash-label">ডেমো অ্যাক্টিভিটি</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
               </svg>
             </div>
             <div class="activity-feed" id="activityFeed">
               <div class="activity-row">
-                <span class="activity-text">Bonus simulation opened</span>
-                <span class="activity-time">1m</span>
+                <span class="activity-text">বোনাস সিমুলেশন শুরু হয়েছে</span>
+                <span class="activity-time">১ মিনিট আগে</span>
               </div>
               <div class="activity-row">
-                <span class="activity-text">Demo reward generated</span>
-                <span class="activity-time">2m</span>
+                <span class="activity-text">ডেমো রিওয়ার্ড জেনারেট হয়েছে</span>
+                <span class="activity-time">২ মিনিট আগে</span>
               </div>
               <div class="activity-row">
-                <span class="activity-text">Leaderboard viewed</span>
-                <span class="activity-time">3m</span>
+                <span class="activity-text">লিডারবোর্ড চেক করা হয়েছে</span>
+                <span class="activity-time">৩ মিনিট আগে</span>
               </div>
               <div class="activity-row">
-                <span class="activity-text">Bonus wheel completed</span>
-                <span class="activity-time">4m</span>
+                <span class="activity-text">বোনাস হুইল ট্রাই করা হয়েছে</span>
+                <span class="activity-time">৪ মিনিট আগে</span>
               </div>
             </div>
           </div>
@@ -1935,10 +2173,10 @@
              ========================================================== -->
         <!-- AD SLOT A -->
         <!-- INSERT APPROVED AD CODE HERE -->
-        <div class="ad-container" aria-label="Advertisement Container A">
-          <span class="ad-badge">ADVERTISEMENT</span>
+        <div class="ad-container" aria-label="বিজ্ঞাপন স্লট A">
+          <span class="ad-badge">বিজ্ঞাপন</span>
           <div class="ad-placeholder-box">
-            <span>Approved Advertisement Area · Slot A</span>
+            <span>বিজ্ঞাপনের নির্ধারিত স্থান · স্লট A</span>
             <span class="ad-spec">Standard Responsive Banner (728×90 / 320×100)</span>
           </div>
         </div>
@@ -1951,9 +2189,9 @@
     <section class="section-spacing wheel-section" id="wheel">
       <div class="container">
         <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
-          <span class="section-eyebrow">Interactive Physics Simulation</span>
-          <h2 class="section-title">Animated Bonus Wheel</h2>
-          <p class="section-subtitle">Experience smooth rotational easing, synthesized sound effects, and confetti feedback. All amounts are fictional.</p>
+          <span class="section-eyebrow">ইন্টারেক্টিভ সিমুলেশন</span>
+          <h2 class="section-title">অ্যানিমেটেড বোনাস হুইল</h2>
+          <p class="section-subtitle">স্পিন করুন এবং দেখুন কীভাবে একটি আধুনিক বোনাস হুইল কাজ করে। এখানে প্রাপ্ত সকল রিওয়ার্ড কাল্পনিক।</p>
         </div>
 
         <div class="wheel-layout">
@@ -1983,15 +2221,15 @@
           <!-- Controls & Result Card -->
           <div class="wheel-controls-card">
             <div>
-              <span class="badge-demo">Simulated Spin</span>
-              <h3 style="font-size: 1.6rem; margin: 0.5rem 0 0.2rem;">Try Your Luck (Demo)</h3>
-              <p class="text-muted" style="font-size: 0.9rem;">Segment values range from ৳500 to ৳1,000 in simulated rewards.</p>
+              <span class="badge-demo">সিমুলেটেড স্পিন</span>
+              <h3 style="font-size: 1.6rem; margin: 0.5rem 0 0.2rem;">হুইল ঘুরিয়ে ট্রাই করুন</h3>
+              <p class="text-muted" style="font-size: 0.9rem;">প্রতিটি সেগমেন্টে ৳৫০০ থেকে ৳১,০০০ পর্যন্ত কাল্পনিক রিওয়ার্ড রয়েছে।</p>
             </div>
 
             <div class="wheel-result-box" id="wheelResultBox">
-              <span class="card-title-sm">SIMULATED RESULT</span>
+              <span class="card-title-sm">সিমুলেটেড ফলাফল</span>
               <div class="wheel-result-amount" id="wheelResultAmount">৳850</div>
-              <p class="wheel-disclaimer">This amount is fictional and has no cash value.</p>
+              <p class="wheel-disclaimer">এটি একটি কাল্পনিক রিওয়ার্ড, এর কোনো আর্থিক মূল্য নেই।</p>
             </div>
 
             <div class="wheel-btn-group">
@@ -1999,10 +2237,10 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
                 </svg>
-                <span>SPIN DEMO WHEEL</span>
+                <span>স্পিন করুন (ডেমো)</span>
               </button>
               <button type="button" class="btn btn-secondary" id="resetWheelBtn" onclick="resetWheel()">
-                Reset (Demo)
+                রিসেট
               </button>
             </div>
           </div>
@@ -2016,9 +2254,9 @@
     <section class="section-spacing" id="features">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Engineered For Craft</span>
-          <h2 class="section-title">Core Demo Highlights</h2>
-          <p class="section-subtitle">Designed to showcase modern fintech and rewards UI architecture.</p>
+          <span class="section-eyebrow">প্রিমিয়াম আর্কিটেকচার</span>
+          <h2 class="section-title">ডেমোর প্রধান সুবিধাসমূহ</h2>
+          <p class="section-subtitle">আধুনিক ফিনটেক ও গেমিং রিওয়ার্ড ইন্টারফেস প্রদর্শনের জন্য তৈরি।</p>
         </div>
 
         <div class="features-grid">
@@ -2030,8 +2268,8 @@
                 <polygon points="10 8 16 12 10 16 10 8"></polygon>
               </svg>
             </div>
-            <h3 class="feature-title">Animated Rewards</h3>
-            <p class="feature-desc">Dynamic count-up sequences, particle bursts, and physical spin easing bring state changes to life.</p>
+            <h3 class="feature-title">অ্যানিমেটেড রিওয়ার্ড</h3>
+            <p class="feature-desc">ডাইনামিক কাউন্টার, কনফেটি সেলিব্রেশন এবং ফিজিক্স স্পিন অ্যানিমেশনের স্মুথ এক্সপেরিয়েন্স।</p>
           </div>
 
           <!-- Feature 2 -->
@@ -2043,8 +2281,8 @@
                 <line x1="9" y1="21" x2="9" y2="9"></line>
               </svg>
             </div>
-            <h3 class="feature-title">Premium Dashboard</h3>
-            <p class="feature-desc">High-contrast dark cards, subtle neon borders, and simulated metrics offer an executive look and feel.</p>
+            <h3 class="feature-title">প্রিমিয়াম ড্যাশবোর্ড</h3>
+            <p class="feature-desc">হাই-কনট্রাস্ট ডার্ক কার্ড, নিওন গ্লো বর্ডার এবং পরিষ্কার মেট্রিক্স ইন্টারফেস।</p>
           </div>
 
           <!-- Feature 3 -->
@@ -2058,8 +2296,8 @@
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
               </svg>
             </div>
-            <h3 class="feature-title">Demo Leaderboard</h3>
-            <p class="feature-desc">Fictional standings with rank-tinted badges demonstrating gamification and progress visualizers.</p>
+            <h3 class="feature-title">ডেমো লিডারবোর্ড</h3>
+            <p class="feature-desc">কাল্পনিক স্ট্যান্ডিং ও র‍্যাংক ব্যাজের মাধ্যমে ইন্টারঅ্যাক্টিভ গেমিফিকেশন ডেমো।</p>
           </div>
 
           <!-- Feature 4 -->
@@ -2070,8 +2308,8 @@
                 <line x1="12" y1="18" x2="12.01" y2="18"></line>
               </svg>
             </div>
-            <h3 class="feature-title">Mobile Experience</h3>
-            <p class="feature-desc">Responsive typography, fluid touch targets, and compact drawers provide a native app feel on any device.</p>
+            <h3 class="feature-title">মোবাইল এক্সপেরিয়েন্স</h3>
+            <p class="feature-desc">যেকোনো ডিভাইসের স্ক্রিনের সাথে মানানসই রেসপন্সিভ লেআউট ও স্মুথ ড্রয়ার মেন্যু।</p>
           </div>
         </div>
       </div>
@@ -2083,38 +2321,38 @@
     <section class="section-spacing" id="how-it-works">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Guided Walkthrough</span>
-          <h2 class="section-title">How It Works</h2>
-          <p class="section-subtitle">Experience our four-step simulated rewards journey.</p>
+          <span class="section-eyebrow">সহজ গাইডলাইন</span>
+          <h2 class="section-title">কীভাবে কাজ করে</h2>
+          <p class="section-subtitle">মাত্র ৪টি সহজ ধাপে সিমুলেশন ইন্টারফেসটি এক্সপ্লোর করুন।</p>
         </div>
 
         <div class="timeline-grid">
           <!-- Step 1 -->
           <div class="timeline-step">
             <span class="step-number">01</span>
-            <h3 class="step-title">Enter Demo ID</h3>
-            <p class="step-desc">Input any test identifier or email format. No account creation or personal data storage occurs.</p>
+            <h3 class="step-title">ডেমো আইডি দিন</h3>
+            <p class="step-desc">যেকোনো ডেমো ইউজারনেম বা আইডি ইনপুট করুন। কোনো আসল অ্যাকাউন্ট বা তথ্য সংরক্ষণ করা হয় না।</p>
           </div>
 
           <!-- Step 2 -->
           <div class="timeline-step">
             <span class="step-number">02</span>
-            <h3 class="step-title">Explore Bonus Flow</h3>
-            <p class="step-desc">Inspect promotional UI states, transparent terms modals, and simulated sharing mechanisms.</p>
+            <h3 class="step-title">বোনাস মোড বেছে নিন</h3>
+            <p class="step-desc">প্রমোশনাল UI ইন্টারফেস, নিয়মনীতি ও সিমুলেটেড শেয়ারিং অপশনগুলো দেখুন।</p>
           </div>
 
           <!-- Step 3 -->
           <div class="timeline-step">
             <span class="step-number">03</span>
-            <h3 class="step-title">Spin / Generate Simulation</h3>
-            <p class="step-desc">Engage with physical wheel animations or instant pseudo-random fictional rewards generation.</p>
+            <h3 class="step-title">হুইল ঘুরিয়ে ট্রাই করুন</h3>
+            <p class="step-desc">স্মুথ ফিজিক্স অ্যানিমেশনযুক্ত বোনাস হুইল ঘুরিয়ে কাল্পনিক রিওয়ার্ড জেনারেট করুন।</p>
           </div>
 
           <!-- Step 4 -->
           <div class="timeline-step">
             <span class="step-number">04</span>
-            <h3 class="step-title">View Demo Result</h3>
-            <p class="step-desc">Review your illustrative reward card and updated analytics in your simulated sandbox dashboard.</p>
+            <h3 class="step-title">ডেমো রেজাল্ট দেখুন</h3>
+            <p class="step-desc">আপনার জন্য প্রদর্শিত কাল্পনিক রিওয়ার্ড কার্ড এবং ড্যাশবোর্ড আপডেট পর্যবেক্ষণ করুন।</p>
           </div>
         </div>
       </div>
@@ -2126,113 +2364,40 @@
     <section class="section-spacing" id="leaderboard">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Simulated Community</span>
-          <h2 class="section-title">Demo Leaderboard</h2>
-          <p class="section-subtitle">Illustrative simulation data — not proof of real payouts.</p>
+          <span class="section-eyebrow">সিমুলেটেড কমিউনিটি</span>
+          <h2 class="section-title">ডেমো লিডারবোর্ড</h2>
+          <p class="section-subtitle">এখানে দেখানো সকল তথ্য কাল্পনিক — এটি কোনো বাস্তব পেমেন্টের প্রমাণ নয়।</p>
+        </div>
+
+        <!-- Leaderboard Filter Controls -->
+        <div class="leaderboard-controls-wrap">
+          <div class="leaderboard-toggle-group" role="tablist" aria-label="লিডারবোর্ড ফিল্টার">
+            <button type="button" class="leaderboard-toggle-btn active" id="btnLeaderboardAllTime" role="tab" aria-selected="true" onclick="switchLeaderboardFilter('allTime')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+              <span>সর্বকালীন (All Time)</span>
+            </button>
+            <button type="button" class="leaderboard-toggle-btn" id="btnLeaderboardToday" role="tab" aria-selected="false" onclick="switchLeaderboardFilter('today')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>আজকের (Today's)</span>
+            </button>
+          </div>
+
+          <div class="leaderboard-auto-pill">
+            <span class="leaderboard-pulse-dot"></span>
+            <span id="leaderboardAutoStatusText">স্বয়ংক্রিয় রিয়েল-টাইম সিমুলেশন সক্রিয়</span>
+          </div>
         </div>
 
         <div style="overflow-x: auto;">
           <table class="leaderboard-table" aria-label="Demo Leaderboard Table">
-            <tbody>
-              <!-- Row 1 -->
-              <tr class="leaderboard-row rank-1">
-                <td class="leaderboard-cell" style="width: 70px;">
-                  <span class="rank-badge">01</span>
-                </td>
-                <td class="leaderboard-cell">
-                  <div class="user-profile">
-                    <div class="user-avatar" style="border-color: var(--accent-gold); color: var(--accent-gold);">AR</div>
-                    <div>
-                      <div class="username-title">Ayaan R.</div>
-                      <div style="font-size: 0.72rem; color: var(--text-muted);">Simulated Session #942</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="leaderboard-cell">
-                  <span class="simulated-score">৳9,991</span>
-                  <span class="badge-demo">DEMO</span>
-                </td>
-              </tr>
-
-              <!-- Row 2 -->
-              <tr class="leaderboard-row rank-2">
-                <td class="leaderboard-cell">
-                  <span class="rank-badge">02</span>
-                </td>
-                <td class="leaderboard-cell">
-                  <div class="user-profile">
-                    <div class="user-avatar">NK</div>
-                    <div>
-                      <div class="username-title">Nabil K.</div>
-                      <div style="font-size: 0.72rem; color: var(--text-muted);">Simulated Session #819</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="leaderboard-cell">
-                  <span class="simulated-score">৳9,312</span>
-                  <span class="badge-demo">DEMO</span>
-                </td>
-              </tr>
-
-              <!-- Row 3 -->
-              <tr class="leaderboard-row">
-                <td class="leaderboard-cell">
-                  <span class="rank-badge">03</span>
-                </td>
-                <td class="leaderboard-cell">
-                  <div class="user-profile">
-                    <div class="user-avatar">ST</div>
-                    <div>
-                      <div class="username-title">Samiha T.</div>
-                      <div style="font-size: 0.72rem; color: var(--text-muted);">Simulated Session #754</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="leaderboard-cell">
-                  <span class="simulated-score">৳8,764</span>
-                  <span class="badge-demo">DEMO</span>
-                </td>
-              </tr>
-
-              <!-- Row 4 -->
-              <tr class="leaderboard-row">
-                <td class="leaderboard-cell">
-                  <span class="rank-badge">04</span>
-                </td>
-                <td class="leaderboard-cell">
-                  <div class="user-profile">
-                    <div class="user-avatar">RH</div>
-                    <div>
-                      <div class="username-title">Rafi H.</div>
-                      <div style="font-size: 0.72rem; color: var(--text-muted);">Simulated Session #612</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="leaderboard-cell">
-                  <span class="simulated-score">৳8,240</span>
-                  <span class="badge-demo">DEMO</span>
-                </td>
-              </tr>
-
-              <!-- Row 5 -->
-              <tr class="leaderboard-row">
-                <td class="leaderboard-cell">
-                  <span class="rank-badge">05</span>
-                </td>
-                <td class="leaderboard-cell">
-                  <div class="user-profile">
-                    <div class="user-avatar">TM</div>
-                    <div>
-                      <div class="username-title">Tanvir M.</div>
-                      <div style="font-size: 0.72rem; color: var(--text-muted);">Simulated Session #593</div>
-                    </div>
-                  </div>
-                </td>
-                <td class="leaderboard-cell">
-                  <span class="simulated-score">৳7,985</span>
-                  <span class="badge-demo">DEMO</span>
-                </td>
-              </tr>
+            <tbody id="leaderboardTableBody">
+              <!-- Dynamically rendered via JS -->
             </tbody>
           </table>
         </div>
@@ -2244,11 +2409,11 @@
           <div class="live-feed-left">
             <div class="live-indicator-dot"></div>
             <div>
-              <span class="live-title">DEMO ACTIVITY</span>
-              <div class="live-event-text" id="liveActivityText">Demo session started · Fictional session initialized</div>
+              <span class="live-title">ডেমো অ্যাক্টিভিটি</span>
+              <div class="live-event-text" id="liveActivityText">ডেমো সেশন শুরু হয়েছে · কাল্পনিক প্রিভিউ রেডি</div>
             </div>
           </div>
-          <span class="badge-demo">SIMULATED FEED</span>
+          <span class="badge-demo">সিমুলেটেড ফিড</span>
         </div>
 
         <!-- ==========================================================
@@ -2256,10 +2421,10 @@
              ========================================================== -->
         <!-- AD SLOT B -->
         <!-- INSERT APPROVED AD CODE HERE -->
-        <div class="ad-container" aria-label="Advertisement Container B">
-          <span class="ad-badge">ADVERTISEMENT</span>
+        <div class="ad-container" aria-label="বিজ্ঞাপন স্লট B">
+          <span class="ad-badge">বিজ্ঞাপন</span>
           <div class="ad-placeholder-box">
-            <span>Approved Advertisement Area · Slot B</span>
+            <span>বিজ্ঞাপনের নির্ধারিত স্থান · স্লট B</span>
             <span class="ad-spec">Standard Responsive Banner (728×90 / 320×100)</span>
           </div>
         </div>
@@ -2281,65 +2446,65 @@
           <!-- FAQ 1 -->
           <div class="faq-item active">
             <button type="button" class="faq-trigger" aria-expanded="true">
-              <span>Is this a real betting service?</span>
+              <span>এটি কি কোনো রিয়েল বেটিং ওয়েবসাইট?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-content">
-              No. BetBonus is strictly an educational UI/UX design simulation and motion study. It does not accept deposits, offer wagers, or connect to any gambling operators.
+              না। BetBonus সম্পূর্ণ একটি শিক্ষামূলক UI/UX ডিজাইন এবং মোশন সিমুলেশন প্রজেক্ট। এখানে কোনো প্রকার ডিপোজিট নেওয়া হয় না, বাজি ধরা যায় না এবং কোনো বেটিং সাইটের সাথে এর সংযোগ নেই।
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
-              <span>Can I withdraw the displayed reward?</span>
+              <span>আমি কি এখানে প্রদর্শিত রিওয়ার্ড টাকা উইথড্র করতে পারব?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-content">
-              No. All amounts shown on this website (such as ৳7,428 or ৳850) are purely fictional numbers generated via client-side JavaScript for visual demonstration. They possess zero real-world currency value and cannot be withdrawn, transferred, or claimed.
+              না। এখানে দেখানো সকল সংখ্যা (যেমন: ৳৭,৪২৮ বা ৳৮৫০) শুধুমাত্র ভিজ্যুয়াল প্রদর্শনের জন্য স্ক্রিপ্টের মাধ্যমে তৈরি কাল্পনিক সংখ্যা। এর কোনো আসল আর্থিক মূল্য নেই এবং কোনোভাবেই ক্যাশ বা উইথড্র করা সম্ভব নয়।
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
-              <span>Are the displayed users real?</span>
+              <span>লিডারবোর্ডে প্রদর্শিত ইউজাররা কি আসল?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-content">
-              No. The names, ranks, and numbers displayed in the leaderboard are entirely fictional data created to illustrate how a competitive gamified UI looks when populated.
+              না। লিডারবোর্ডের সব নাম, র‍্যাংক এবং তথ্য ডেমো ডিজাইনের জন্য তৈরি কাল্পনিক ডেটা। এগুলো কোনো আসল ইউজার বা পেমেন্টের তথ্য নয়।
             </div>
           </div>
 
           <!-- FAQ 4 -->
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
-              <span>What does the demo counter mean?</span>
+              <span>ডেমো সেশন কাউন্টারটির অর্থ কী?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-content">
-              The "Demo Sessions" counter is an illustrative number generated to demonstrate real-time metrics UI design. It does not represent actual registered users or real-world customer traffic.
+              "ডেমো সেশন" সংখ্যাটি ড্যাশবোর্ডের রিয়েল-টাইম মেট্রিক ডিজাইন প্রদর্শনের উদ্দেশ্যে তৈরি একটি কাল্পনিক সংখ্যা। এটি কোনো নিবন্ধিত আসল ব্যবহারকারী নির্দেশ করে না।
             </div>
           </div>
 
           <!-- FAQ 5 -->
           <div class="faq-item">
             <button type="button" class="faq-trigger" aria-expanded="false">
-              <span>Where are advertisements displayed?</span>
+              <span>বিজ্ঞাপনগুলো কোথায় দেখানো হয়?</span>
               <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-content">
-              Advertisements are strictly confined to dedicated, clearly labeled placeholders marked "ADVERTISEMENT". We never disguise promotional content as system buttons, error dialogs, or bonus rewards.
+              বিজ্ঞাপনগুলো কেবল নির্দিষ্ট "বিজ্ঞাপন" লেবেলযুক্ত নির্ধারিত ব্যানার স্থানেই থাকে। আমরা কখনোই কোনো বিজ্ঞাপনকে সিস্টেম বাটন, ডায়ালগ বা রিওয়ার্ডের রূপে বিভ্রান্তিকরভাবে উপস্থাপন করি না।
             </div>
           </div>
         </div>
@@ -2352,10 +2517,10 @@
     <div class="container">
       <!-- AD SLOT C -->
       <!-- INSERT APPROVED AD CODE HERE -->
-      <div class="ad-container" aria-label="Advertisement Container C">
-        <span class="ad-badge">ADVERTISEMENT</span>
+      <div class="ad-container" aria-label="বিজ্ঞাপন স্লট C">
+        <span class="ad-badge">বিজ্ঞাপন</span>
         <div class="ad-placeholder-box">
-          <span>Approved Advertisement Area · Slot C</span>
+          <span>বিজ্ঞাপনের নির্ধারিত স্থান · স্লট C</span>
           <span class="ad-spec">Standard Responsive Banner (728×90 / 320×100)</span>
         </div>
       </div>
@@ -2374,9 +2539,9 @@
             </svg>
           </div>
           <div>
-            <h3 class="transparency-title">Demo Transparency</h3>
+            <h3 class="transparency-title">স্বচ্ছতা ও নিয়মনীতি</h3>
             <p class="transparency-text">
-              This website is a UI/UX educational simulation. No real-money betting, deposits, withdrawals or cash rewards are provided.
+              এই ওয়েবসাইটটি শুধুমাত্র একটি UI/UX শিক্ষামূলক সিমুলেশন। এখানে কোনো আসল টাকার জুয়া, ডিপোজিট, উইথড্রয়াল বা নগদ পুরস্কার নেই।
             </p>
           </div>
         </div>
@@ -2390,10 +2555,10 @@
   <div class="container">
     <!-- AD SLOT D -->
     <!-- INSERT APPROVED AD CODE HERE -->
-    <div class="ad-container" style="margin: 1.5rem 0;" aria-label="Advertisement Container D">
-      <span class="ad-badge">ADVERTISEMENT</span>
+    <div class="ad-container" style="margin: 1.5rem 0;" aria-label="বিজ্ঞাপন স্লট D">
+      <span class="ad-badge">বিজ্ঞাপন</span>
       <div class="ad-placeholder-box">
-        <span>Approved Advertisement Area · Slot D</span>
+        <span>বিজ্ঞাপনের নির্ধারিত স্থান · স্লট D</span>
         <span class="ad-spec">Standard Responsive Banner (728×90 / 320×100)</span>
       </div>
     </div>
@@ -2407,19 +2572,19 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="brand-title">BETBONUS <span class="badge-demo">DEMO</span></div>
-          <p>Explore the experience. No real money involved.</p>
+          <p>এক্সপেরিয়েন্স এক্সপ্লোর করুন। আসল টাকার কোনো লেনদেন নেই।</p>
         </div>
         <nav class="footer-nav" aria-label="Footer Links">
-          <a href="#dashboard">Dashboard</a>
-          <a href="#wheel">Bonus Wheel</a>
-          <a href="#leaderboard">Leaderboard</a>
-          <a href="#how-it-works">How It Works</a>
+          <a href="#dashboard">ড্যাশবোর্ড</a>
+          <a href="#wheel">বোনাস হুইল</a>
+          <a href="#leaderboard">লিডারবোর্ড</a>
+          <a href="#how-it-works">কীভাবে কাজ করে</a>
           <a href="#faq">FAQ</a>
         </nav>
       </div>
       <div class="footer-bottom">
-        <div>© 2026 BetBonus Demo. Standalone Educational Simulation.</div>
-        <div>All displayed figures, accounts, and activities are fictional.</div>
+        <div>© 2026 BetBonus Demo. স্বাধীন এডুকেশনাল সিমুলেশন।</div>
+        <div>প্রদর্শিত সকল সংখ্যা, অ্যাকাউন্ট এবং অ্যাক্টিভিটি কাল্পনিক।</div>
       </div>
     </div>
   </footer>
@@ -2438,23 +2603,23 @@
 
       <!-- STEP 1: Identification -->
       <div class="modal-step active" id="modalStep1">
-        <span class="badge-demo">STEP 01 OF 03</span>
-        <h3 class="modal-title" id="modalTitle">Start Demo Simulation</h3>
-        <p class="modal-desc">Enter any test identifier. It is not sent to a betting operator.</p>
+        <span class="badge-demo">ধাপ ১ / ৩</span>
+        <h3 class="modal-title" id="modalTitle">ডেমো সিমুলেশন শুরু করুন</h3>
+        <p class="modal-desc">যেকোনো টেস্ট আইডি বা নম্বর দিন। এটি কোথাও সেভ বা পাঠানো হয় না।</p>
         <div>
           <input type="text" class="modal-input" id="demoIdInput" placeholder="demo@example.com / 01XXXXXXXXX" value="demo@betbonus.test" aria-label="Demo Identifier Input">
-          <span style="font-size: 0.72rem; color: #7C8981; margin-top: 0.4rem; display: block;">No verified or real contact info required.</span>
+          <span style="font-size: 0.72rem; color: #7C8981; margin-top: 0.4rem; display: block;">কোনো ব্যক্তিগত বা আসল তথ্যের প্রয়োজন নেই।</span>
         </div>
         <div class="modal-actions">
-          <button type="button" class="btn btn-primary" onclick="proceedToStep2()">Continue</button>
+          <button type="button" class="btn btn-primary" onclick="proceedToStep2()">পরবর্তী ধাপ</button>
         </div>
       </div>
 
       <!-- STEP 2: Share Demo Flow -->
       <div class="modal-step" id="modalStep2">
-        <span class="badge-demo">STEP 02 OF 03</span>
-        <h3 class="modal-title">Share the Demo</h3>
-        <p class="modal-desc">Share this educational simulation with someone.</p>
+        <span class="badge-demo">ধাপ ২ / ৩</span>
+        <h3 class="modal-title">ডেমো শেয়ার করুন</h3>
+        <p class="modal-desc">বন্ধুদের সাথে এই এডুকেশনাল ইন্টারফেসটি শেয়ার করুন।</p>
         <div class="share-btn-group">
           <button type="button" class="btn share-btn-whatsapp" onclick="shareToPlatform('whatsapp')">
             WhatsApp
@@ -2464,23 +2629,23 @@
           </button>
         </div>
         <div class="modal-actions">
-          <button type="button" class="btn btn-secondary" onclick="proceedToStep3()">Skip — Demo</button>
+          <button type="button" class="btn btn-secondary" onclick="proceedToStep3()">এড়িয়ে যান (ডেমো)</button>
         </div>
       </div>
 
       <!-- STEP 3: Simulated Result -->
       <div class="modal-step" id="modalStep3">
-        <span class="badge-demo">SIMULATION COMPLETE</span>
-        <h3 class="modal-title">SIMULATED RESULT</h3>
-        <div class="simulated-result-display">
-          <div class="card-title-sm">GENERATED DEMO BONUS</div>
+        <span class="badge-demo">সিমুলেশন সম্পন্ন</span>
+        <h3 class="modal-title">সিমুলেটেড ফলাফল</h3>
+        <div class="simulated-result-display" id="modalResultDisplay">
+          <div class="card-title-sm">কাল্পনিক ডেমো বোনাস</div>
           <div class="simulated-result-number" id="modalBonusResult">৳7,428</div>
           <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
-            Fictional UI value — cannot be withdrawn or claimed.
+            কাল্পনিক UI ভ্যালু — কোনো আসল টাকা বা ক্যাশ উইথড্রয়াল নেই।
           </p>
         </div>
         <div class="modal-actions">
-          <button type="button" class="btn btn-primary" onclick="finishClaimFlow()">Continue to Demo</button>
+          <button type="button" class="btn btn-primary" onclick="finishClaimFlow()">ডেমো দেখুন</button>
         </div>
       </div>
     </div>
@@ -2494,10 +2659,52 @@
        ========================================================== -->
   <script>
     /* ==========================================================
-       DEMO DATA ARRAYS
+       DEMO DATA ARRAYS & BANGLADESHI USER POOLS
        ========================================================== */
     const demoRewards = [3240, 4875, 5630, 7428, 8164, 9312, 6789, 3955, 9991];
     const demoUsers = [2007, 2146, 2284, 2397, 2518, 2674, 2811, 2936, 3072, 3194];
+
+    // Pool of realistic authentic Bangladeshi names with initials and avatars
+    const bangladeshiNamesPool = [
+      { name: "Ayaan Rahman", bangla: "আয়ান রহমান", initials: "AR", district: "ঢাকা" },
+      { name: "Nabil Khan", bangla: "নাবিল খান", initials: "NK", district: "চট্টগ্রাম" },
+      { name: "Samiha Tabassum", bangla: "সামিহা তাবাসসুম", initials: "ST", district: "সিলেট" },
+      { name: "Rafiul Hasan", bangla: "রাফিউল হাসান", initials: "RH", district: "রাজশাহী" },
+      { name: "Tanvir Mahmud", bangla: "তানভীর মাহমুদ", initials: "TM", district: "খুলনা" },
+      { name: "Tasnim Anjum", bangla: "তাসনিম আনজুম", initials: "TA", district: "কুমিল্লা" },
+      { name: "Zubair Ahmed", bangla: "জুবায়ের আহমেদ", initials: "ZA", district: "বরিশাল" },
+      { name: "Nusrat Jahan", bangla: "নুসরাত জাহান", initials: "NJ", district: "ময়মনসিংহ" },
+      { name: "Fahim Shahriar", bangla: "ফাহিম শাহরিয়ার", initials: "FS", district: "রংপুর" },
+      { name: "Sadia Islam", bangla: "সাদিয়া ইসলাম", initials: "SI", district: "বগুড়া" },
+      { name: "Mahir Faysal", bangla: "মাহির ফয়সাল", initials: "MF", district: "গাজীপুর" },
+      { name: "Farhan Hossain", bangla: "ফারহান হোসেন", initials: "FH", district: "নারায়ণগঞ্জ" },
+      { name: "Anika Chowdhury", bangla: "আনিকা চৌধুরী", initials: "AC", district: "ফেনী" },
+      { name: "Sakib Al Masud", bangla: "সাকিব আল মাসুদ", initials: "SM", district: "দিনাজপুর" },
+      { name: "Imran Nazir", bangla: "ইমরান নাজির", initials: "IN", district: "যশোর" },
+      { name: "Mehedi Mir", bangla: "মেহেদী মীর", initials: "MM", district: "কক্সবাজার" }
+    ];
+
+    // Leaderboard state
+    let activeLeaderboardFilter = 'allTime'; // 'allTime' | 'today'
+    let leaderboardAutoInterval = null;
+
+    // Leaderboard entries for All Time and Today
+    const leaderboardData = {
+      allTime: [
+        { name: "Ayaan Rahman", bangla: "আয়ান রহমান", initials: "AR", session: "৯৪২", score: 9991 },
+        { name: "Nabil Khan", bangla: "নাবিল খান", initials: "NK", session: "৮১৯", score: 9312 },
+        { name: "Samiha Tabassum", bangla: "সামিহা তাবাসসুম", initials: "ST", session: "৭৫৪", score: 8764 },
+        { name: "Rafiul Hasan", bangla: "রাফিউল হাসান", initials: "RH", session: "৬১২", score: 8240 },
+        { name: "Tanvir Mahmud", bangla: "তানভীর মাহমুদ", initials: "TM", session: "৫৯৩", score: 7985 }
+      ],
+      today: [
+        { name: "Zubair Ahmed", bangla: "জুবায়ের আহমেদ", initials: "ZA", session: "১২৪", score: 4850 },
+        { name: "Nusrat Jahan", bangla: "নুসরাত জাহান", initials: "NJ", session: "১১৮", score: 4420 },
+        { name: "Fahim Shahriar", bangla: "ফাহিম শাহরিয়ার", initials: "FS", session: "১০৫", score: 3990 },
+        { name: "Tasnim Anjum", bangla: "তাসনিম আনজুম", initials: "TA", session: "০৯৮", score: 3670 },
+        { name: "Sadia Islam", bangla: "সাদিয়া ইসলাম", initials: "SI", session: "০৮৯", score: 3410 }
+      ]
+    };
     const wheelSegments = [
       { label: "৳500", value: 500, color: "#0E1812" },
       { label: "৳600", value: 600, color: "#14241B" },
@@ -2510,11 +2717,11 @@
     ];
 
     const demoLiveActivities = [
-      "Demo session started · Fictional session initialized",
-      "Bonus wheel opened · Physics simulation ready",
-      "Simulation completed · Fictional reward generated",
-      "FAQ viewed · Transparency notes read",
-      "Demo dashboard opened · Metrics previewed"
+      "ডেমো সেশন শুরু হয়েছে · কাল্পনিক সেশন প্রস্তুত",
+      "বোনাস হুইল খোলা হয়েছে · ফিজিক্স সিমুলেশন রেডি",
+      "সিমুলেশন সম্পন্ন · কাল্পনিক রিওয়ার্ড জেনারেট হয়েছে",
+      "FAQ সেকশন পড়া হয়েছে · স্বচ্ছতার নিয়মাবলি ভিউ করা হয়েছে",
+      "ডেমো ড্যাশবোর্ড ওপেন করা হয়েছে · মেট্রিক্স প্রিভিউ রানিং"
     ];
 
     let currentRotation = 0;
@@ -2574,6 +2781,60 @@
           osc.start(ctx.currentTime + idx * 0.08);
           osc.stop(ctx.currentTime + idx * 0.08 + 0.35);
         });
+      } catch (e) {
+        // Silent fallback
+      }
+    }
+
+    /* Second, more emphatic success fanfare sound with harmonized chord and shimmer */
+    function playEmphaticSuccessSound() {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+
+        // Phase 1: Rapid rising brass/synth chime
+        const chimeNotes = [523.25, 659.25, 783.99, 1046.50, 1318.51, 1567.98]; // C5, E5, G5, C6, E6, G6
+        chimeNotes.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          const startTime = ctx.currentTime + idx * 0.055;
+          osc.frequency.setValueAtTime(freq, startTime);
+          gain.gain.setValueAtTime(0.13, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.32);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(startTime);
+          osc.stop(startTime + 0.32);
+        });
+
+        // Phase 2: Emphatic sustained victory major chord with sparkling shimmer
+        const chordStartTime = ctx.currentTime + 0.35;
+        const chordFrequencies = [523.25, 659.25, 783.99, 1046.50]; // C Major triad + octave
+        chordFrequencies.forEach(freq => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, chordStartTime);
+          gain.gain.setValueAtTime(0.15, chordStartTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, chordStartTime + 0.65);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(chordStartTime);
+          osc.stop(chordStartTime + 0.65);
+        });
+
+        // Phase 3: High bell overtone sparkle on hit
+        const bellOsc = ctx.createOscillator();
+        const bellGain = ctx.createGain();
+        bellOsc.type = 'sine';
+        bellOsc.frequency.setValueAtTime(2093.00, chordStartTime + 0.02); // C7 bell ring
+        bellGain.gain.setValueAtTime(0.08, chordStartTime + 0.02);
+        bellGain.gain.exponentialRampToValueAtTime(0.0001, chordStartTime + 0.5);
+        bellOsc.connect(bellGain);
+        bellGain.connect(ctx.destination);
+        bellOsc.start(chordStartTime + 0.02);
+        bellOsc.stop(chordStartTime + 0.5);
       } catch (e) {
         // Silent fallback
       }
@@ -2812,14 +3073,33 @@
       const formatted = `৳${randomReward.toLocaleString()}`;
       
       const modalResult = document.getElementById('modalBonusResult');
-      if (modalResult) modalResult.textContent = formatted;
+      const modalBox = document.getElementById('modalResultDisplay');
+      if (modalResult) {
+        modalResult.textContent = formatted;
+        // Trigger subtle scale-up entrance animation
+        modalResult.classList.remove('animate-scale-up');
+        void modalResult.offsetWidth; // Force reflow to restart animation reliably
+        modalResult.classList.add('animate-scale-up');
+      }
+
+      if (modalBox) {
+        modalBox.classList.remove('has-revealed');
+        void modalBox.offsetWidth;
+        modalBox.classList.add('has-revealed');
+      }
 
       // Also update the dashboard bonus amount
       const dashBonus = document.getElementById('dashBonusAmount');
       if (dashBonus) dashBonus.textContent = formatted;
 
       showModalStep(3);
+
+      // Play the initial celebratory chime and trigger the more emphatic second fanfare upon display
       playWinSound();
+      setTimeout(() => {
+        playEmphaticSuccessSound();
+      }, 240);
+
       triggerConfetti();
     }
 
@@ -2837,7 +3117,7 @@
     }
 
     function shareToPlatform(platform) {
-      const shareMessage = encodeURIComponent("I tried the BetBonus educational demo — no real money involved.");
+      const shareMessage = encodeURIComponent("আমি BetBonus-এর শিক্ষামূলক ডেমো ইন্টারফেসটি ট্রাই করলাম — এতে কোনো আসল টাকার ঝুঁকি নেই।");
       const shareUrl = encodeURIComponent(window.location.href);
 
       if (platform === 'whatsapp') {
@@ -3119,7 +3399,7 @@
           card.style.transform = `perspective(1200px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg) translateZ(8px)`;
           rafId = requestAnimationFrame(renderLoop);
         } else {
-          card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+          card.style.transform = '';
           rafId = null;
         }
       }

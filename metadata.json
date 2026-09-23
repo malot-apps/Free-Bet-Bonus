@@ -1,6 +1,6 @@
 {
   "name": "BetBonus — Premium Rewards Demo",
-  "description": "Explore a premium rewards interface through an educational simulation. No real money, deposits or withdrawals.",
+  "description": "একটি এডুকেশনাল সিমুলেশনের মাধ্যমে প্রিমিয়াম রিওয়ার্ড ইন্টারফেস এক্সপ্লোর করুন। কোনো ডিপোজিট বা আসল টাকা ছাড়াই।",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
